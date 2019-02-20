@@ -46,4 +46,21 @@ public class Algorithms1 {
         }
         return num == sum ? true : false;
     }
+    public int getNWD(int x, int y){
+        // 1. sprawdzenie większej i mniejszej
+        int less = x;
+        int greather = y;
+        if(x > y){
+            less = y;
+            greather = x;
+        }
+        // 2. Iterujemy w pętli i sprawdzamy czy dzielnik less
+        // jest też dzielnikiem greather
+        for(int i = less; less > 1; i--){
+            if(less % i == 0 && greather % i == 0){
+                return i;
+            }
+        }
+        return 1;
+    }
 }
