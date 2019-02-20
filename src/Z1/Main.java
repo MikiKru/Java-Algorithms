@@ -7,5 +7,7 @@ public class Main {
         System.out.println("Wynik silni: " + a.factorial(4));
         System.out.println("Suma cg: " + a.geoSequence(2,2,4));
         System.out.println("Suma ca: " + a.algSequence(2,2,4));
+        System.out.println("Czy doskonała: " + a.perfectNum(11));
+        System.out.println("Czy doskonała: " + a.perfectNum(28));
     }
 }

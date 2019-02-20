@@ -37,4 +37,13 @@ public class Algorithms1 {
         }
         return sum;
     }
+    public boolean perfectNum(int num){
+        int sum = 0;
+        for (int i = 1; i < num; i++){
+            if (num % i == 0){
+                sum = sum + i;
+            }
+        }
+        return num == sum ? true : false;
+    }
 }
