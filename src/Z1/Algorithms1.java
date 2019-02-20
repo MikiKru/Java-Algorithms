@@ -1,5 +1,9 @@
 package Z1;
 
+import java.time.Duration;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Algorithms1 {
     // algorytm potęgowania
     public int power(int x, int y){
@@ -12,14 +16,21 @@ public class Algorithms1 {
         return result;
     }
     // algorytm silnia z n
-    public int factorial(int n){
+    public long factorial(int n){
         // 2
-        int result = 1;
+        long result = 1;
         // 3
         for(int i = n; i > 1; i--){
             result = result * i;
         }
         return result;
+    }
+    // rekurencyjne
+    public long factorialRec(int n){
+        if(n > 1){
+            return n * factorialRec(n-1);
+        }
+        return 1;
     }
     // algorytm ciągu geometrycznego
     public int geoSequence(int a0, int q, int n){
@@ -96,6 +107,25 @@ public class Algorithms1 {
             }
         }
         // 3. zwracamy true jeżeli licznik == 0 : false jesżeli licznik > 0
-        return counter == 0 ? true : false;
+        return counter == 0 && number != 1 ? true : false;
+    }
+    public void getPrimaryNumbers(int n){
+        LocalTime lt_start = LocalTime.now();
+        // 1. Inicjalizacja licznika zliczeń
+        int primaryNumbersCounter = 0;
+        int i = 2;
+        // 2. W pętli while iterujemy po liczbach naturalnych od 0
+        // 3. W instrukcji if sprawdzamy czy aktualna liczba jest pierwsza
+        // -> jeżeli tak - wypisujemy i zwiększamuy licznik
+        while(primaryNumbersCounter < n){
+            if (isPrimary(i)){
+                primaryNumbersCounter++;
+                System.out.print(i + " ");
+            }
+            i++;
+        }
+        LocalTime lt_stop = LocalTime.now();
+        Duration time_interval = Duration.between(lt_start,lt_stop);
+        System.out.println("\nCzas wykonywania: " + time_interval);
     }
 }
