@@ -12,5 +12,8 @@ public class Main {
         System.out.println("NWD: " + a.getNWD(12, 9));
         System.out.println("NWD: " + a.getNWD(11, 13));
         System.out.println("NWD: " + a.getNWD(6, 12));
+        System.out.println("DtB: " + a.decimalToBinary(12));
+        System.out.println("DtB: " + a.decimalToBinary(17));
+        System.out.println("BtD: " + a.binaryToDecimal("1100"));
     }
 }

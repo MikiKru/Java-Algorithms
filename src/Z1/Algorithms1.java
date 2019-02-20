@@ -63,4 +63,24 @@ public class Algorithms1 {
         }
         return 1;
     }
+    public String decimalToBinary(int decimal){
+        String binary = "";
+        while (decimal >= 1){
+            binary = binary.concat(String.valueOf(decimal % 2));
+            decimal = decimal / 2;
+        }
+        // odwrócenie liczby
+        // String Buffer pozwala na modyfikację zawartości tablicy String
+//        StringBuffer sb = new StringBuffer(binary);
+//        return sb.reverse().toString();
+        return new StringBuffer(binary).reverse().toString();
+    }
+
+    public int binaryToDecimal(String binary){
+        int decimal = 0;
+        for (int i = 0; i < binary.length(); i++){
+            decimal = decimal + (((int)binary.charAt(i)-48) * power(2, (binary.length()-1) - i));
+        }
+        return decimal;
+    }
 }
