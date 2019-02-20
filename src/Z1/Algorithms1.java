@@ -83,4 +83,19 @@ public class Algorithms1 {
         }
         return decimal;
     }
+    public boolean isPrimary(int number){
+        // 1. Inicjalizacja licznika podzielników
+        int counter = 0;
+        // 2. W pętli for zliczamy wszystkie liczby naruralne do liczby number
+        // Każdorazowo sprawdzając w instrukcji if czy te liczby są dzielnikami number
+        // TAK - licznik ++
+        // NIE - nic
+        for(int i = 2; i < number; i++){
+            if(number % i == 0){
+                counter++;
+            }
+        }
+        // 3. zwracamy true jeżeli licznik == 0 : false jesżeli licznik > 0
+        return counter == 0 ? true : false;
+    }
 }
