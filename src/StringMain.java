@@ -11,5 +11,6 @@ public class StringMain {
         System.out.println("Number of upper cases: " + sc.countUpperCases());
         // Napisz metodę reverse
         System.out.println("Reverse: " + sc.reverse());
+        
     }
 }
